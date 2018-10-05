@@ -1,31 +1,29 @@
 package com.five.high.emirim.geulgil.geulgil.network
 
-import com.five.high.emirim.geulgil.geulgil.network.model.Word
+import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
-import retrofit2.http.Query
-import java.util.*
 
 /**
  * Created by Mirim on 2018-10-05.
  */
 interface RetrofitService {
 
-//    @GET("/")
-//    fun search(): Call<Word>
+    @GET("/")
+    fun networkTest(): Call<JsonObject>
 
-    @GET("search/{search_word}")
-    fun search(@Path("search_word")searchWord: String): Call<Word>
+    @GET("words/{search_word}")
+    fun search(@Path("search_word")searchWord: String): Call<JsonObject>
 
-    @GET("search/{search_word}/similar")
-    fun searchInSimilar(@Path("search_word")searchWord: String): Call<Word>
+    @GET("words/{search_word}/similar")
+    fun searchInSimilar(@Path("search_word")searchWord: String): Call<JsonObject>
 
-    @GET("search/{search_word}/mean")
-    fun searchInMean(@Path("search_word")searchWord: String): Call<Word>
+    @GET("words/{search_word}/mean")
+    fun searchInMean(@Path("search_word")searchWord: String): Call<JsonObject>
 
     /**
      * Companion object to create the RetrofitService

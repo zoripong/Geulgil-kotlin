@@ -1,7 +1,6 @@
 package com.five.high.emirim.geulgil.geulgil.activity
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -11,7 +10,7 @@ import android.util.Log
 import com.five.high.emirim.geulgil.geulgil.R
 import com.five.high.emirim.geulgil.geulgil.alias.SearchType
 import com.five.high.emirim.geulgil.geulgil.network.RetrofitService
-import com.five.high.emirim.geulgil.geulgil.network.model.Word
+import com.google.gson.JsonObject
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.search_box.*
 import retrofit2.Call
@@ -26,6 +25,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        supportActionBar!!.hide()
 
         window.setBackgroundDrawableResource(R.drawable.bg_basic)
         et_searchBox.text = Editable.Factory.getInstance().newEditable("사랑  ?")
@@ -49,20 +50,21 @@ class MainActivity : AppCompatActivity() {
                     when(sp_word_type.selectedItemPosition){
                         SearchType.BASIC_SEARCH.ordinal -> {
                             // 포괄 검색
-                            retrofitService.search(word).enqueue(object : Callback<Word> {
-                                override fun onResponse(call: Call<Word>?, response: Response<Word>?) {
+                            retrofitService.search(word).enqueue(object : Callback<JsonObject> {
+                                override fun onResponse(call: Call<JsonObject>?, response: Response<JsonObject>?) {
                                     if (response != null && response.isSuccessful) {
-                                        Log.e(tag, "성공")
+                                        Log.e(tag, "성공 : ${response.body()}")
+                                        val intent = Intent(this@MainActivity, ResultActivity::class.java)
+//                                        intent.putExtras("peopleId", response.body())
+                                        startActivity(intent)
+
                                     } else {
                                         Log.e(tag, "실패")
                                     }
                                 }
-
-                                override fun onFailure(call: Call<Word>?, t: Throwable?) {
+                                override fun onFailure(call: Call<JsonObject>?, t: Throwable?) {
                                 }
                             })
-
-
                         }
                         SearchType.MEAN_SEARCH.ordinal -> {
                             // 포함어 검색
@@ -72,15 +74,9 @@ class MainActivity : AppCompatActivity() {
                             // 유사어 검색
                             retrofitService.searchInSimilar(word)
                         }
-
                     }
-
-
-
                 }
             }
-
-
         }
 
         iv_question_mark.imageAlpha = 50

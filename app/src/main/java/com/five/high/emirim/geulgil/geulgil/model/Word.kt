@@ -1,4 +1,4 @@
-package com.five.high.emirim.geulgil.geulgil.network.model
+package com.five.high.emirim.geulgil.geulgil.model
 
 /**
  * Created by Mirim on 2018-10-05.
@@ -6,5 +6,4 @@ package com.five.high.emirim.geulgil.geulgil.network.model
 data class Word(
         val word: String,
         val mean: String
-
 )
