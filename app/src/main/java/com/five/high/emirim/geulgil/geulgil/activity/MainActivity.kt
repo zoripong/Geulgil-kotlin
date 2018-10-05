@@ -9,8 +9,14 @@ import android.support.annotation.RequiresApi
 import android.text.Editable
 import android.util.Log
 import com.five.high.emirim.geulgil.geulgil.R
+import com.five.high.emirim.geulgil.geulgil.alias.SearchType
+import com.five.high.emirim.geulgil.geulgil.network.RetrofitService
+import com.five.high.emirim.geulgil.geulgil.network.model.Word
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.search_box.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.regex.Pattern
 
 class MainActivity : AppCompatActivity() {
@@ -39,6 +45,38 @@ class MainActivity : AppCompatActivity() {
                 else -> {
                     word = word.replace(" ", "")
                     Log.e(tag, "검색합니다. : ${word} / 타입은 : ${sp_word_type.selectedItemPosition}")
+                    val retrofitService = RetrofitService.create()
+                    when(sp_word_type.selectedItemPosition){
+                        SearchType.BASIC_SEARCH.ordinal -> {
+                            // 포괄 검색
+                            retrofitService.search(word).enqueue(object : Callback<Word> {
+                                override fun onResponse(call: Call<Word>?, response: Response<Word>?) {
+                                    if (response != null && response.isSuccessful) {
+                                        Log.e(tag, "성공")
+                                    } else {
+                                        Log.e(tag, "실패")
+                                    }
+                                }
+
+                                override fun onFailure(call: Call<Word>?, t: Throwable?) {
+                                }
+                            })
+
+
+                        }
+                        SearchType.MEAN_SEARCH.ordinal -> {
+                            // 포함어 검색
+                            retrofitService.searchInMean(word)
+                        }
+                        SearchType.SIMILAR_SEARCH.ordinal -> {
+                            // 유사어 검색
+                            retrofitService.searchInSimilar(word)
+                        }
+
+                    }
+
+
+
                 }
             }
 
