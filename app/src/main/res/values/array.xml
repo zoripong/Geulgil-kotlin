@@ -1,0 +1,7 @@
+<resources>
+    <string-array name="searchType">
+        <item>전체</item>
+        <item>포함어</item>
+        <item>유사어</item>
+    </string-array>
+</resources>
