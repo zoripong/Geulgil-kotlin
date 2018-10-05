@@ -6,14 +6,23 @@
 
 단어로 의미를 찾는 사전이 아닌 의미로 단어를 찾는 사전 글길.
 
-## 기능
+## Functions
+![screenshot_01](https://lh3.googleusercontent.com/puH2yZeBoBKSjBLIrXNdn9ps8xC2g3Nc20bQOMDWzaXVJ_lLfeTErBfUh1eqD337h8I=w1920-h969-rw)
+![screenshot_02](https://lh3.googleusercontent.com/xpE2dndOX-FCn3Cis7xi9R8eLeXBBnAXpTKXc73GcOtxS42sCh1G8sxGLIZ7NJqdjiM=w1920-h969-rw)
+![screenshot_03](https://lh3.googleusercontent.com/lyEva2h8rQhHH7lrgOJzE_vALOuBpQT9vxQQpm5Hec_Yx9uxM8KIPGBmWi5clmqca4M=w1920-h969-rw)
+![screenshot_04](https://lh3.googleusercontent.com/gH3nxleq314_pmuUk56JzPYMQz-EhhX4QKa5OuxrQEw_W6_qN600eYfhO-2fzwi5i53G=w1920-h969-rw)
+![screenshot_05](https://lh3.googleusercontent.com/S93RfhuDh-wYAfEWL5bvcBInH3ocbYSMoG7txtN4rMXTcdiGl6FntAQhqWVJcFFg1w=w1920-h969-rw)
+
 
 ## Download
-```
-[https://play.google.com/store/apps/details?id=com.five.high.emirim.geulgil](https://play.google.com/store/apps/details?id=com.five.high.emirim.geulgil)
-```
+[![Iamge Label](https://play.google.com/intl/ko/badges/images/generic/ko_badge_web_generic.png)](https://play.google.com/store/apps/details?id=com.five.high.emirim.geulgil)
 
 ## Video
 [![Video Label](http://img.youtube.com/vi/VNo6H4rgHzM/0.jpg)](https://youtu.be/VNo6H4rgHzM?t=0s) 
 
 ## Screenshot
+
+
+## [Website](https://geulgil-web.firebaseapp.com/)
+
+author Devuri([zoripong](https://github.com/zoripong/))
