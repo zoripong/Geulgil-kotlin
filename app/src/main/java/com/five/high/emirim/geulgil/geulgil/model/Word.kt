@@ -8,6 +8,6 @@ data class Word(
         val word: String,
         val part: Int,
         val means: ArrayList<String>,
-        val meanWords: ArrayList<String>,
-        val similarWords: ArrayList<String>
+        val meanKeywords: ArrayList<ArrayList<String>>,
+        val similarKeywords: ArrayList<String>
 )

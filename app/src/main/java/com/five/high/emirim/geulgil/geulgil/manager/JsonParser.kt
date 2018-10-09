@@ -2,6 +2,7 @@ package com.five.high.emirim.geulgil.geulgil.manager
 
 import com.five.high.emirim.geulgil.geulgil.model.Word
 import com.google.gson.JsonArray
+import org.json.JSONArray
 import org.json.JSONObject
 
 /**
@@ -33,19 +34,24 @@ class JsonParser {
                 means.add(jsonMeans.getString(i))
             }
 
-            val jsonMeanWords = word.getJSONArray("mean_words")
-            val meanWords: ArrayList<String> = ArrayList()
-            for(i in 0 until jsonMeanWords.length()){
-                meanWords.add(jsonMeanWords.getString(i))
+            val jsonMeanWordsList = word.getJSONArray("mean_keywords")
+            val meanWordsList: ArrayList<ArrayList<String>> = ArrayList()
+            for(i in 0 until jsonMeanWordsList.length()){
+                val jsonMeanWords: JSONArray = jsonMeanWordsList.getJSONArray(i)
+                val meanWords: ArrayList<String> = ArrayList()
+                for(j in 0 until jsonMeanWords.length()) {
+                    meanWords.add(jsonMeanWords.getString(i))
+                }
+                meanWordsList.add(meanWords)
             }
 
-            val jsonSimilarWords = word.getJSONArray("similar_words")
+            val jsonSimilarWords = word.getJSONArray("similar_keywords")
             val similarWords: ArrayList<String> = ArrayList()
             for(i in 0 until jsonSimilarWords.length()){
                 similarWords.add(jsonSimilarWords.getString(i))
             }
 
-            list.add(Word(word.getInt("word_id"), word.getString("word"), word.getInt("part"), means, meanWords, similarWords))
+            list.add(Word(word.getInt("word_id"), word.getString("word"), word.getInt("part"), means, meanWordsList, similarWords))
         }
         return list
     }
