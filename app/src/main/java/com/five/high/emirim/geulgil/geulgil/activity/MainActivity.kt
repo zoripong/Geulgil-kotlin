@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.annotation.RequiresApi
 import android.text.Editable
 import android.util.Log
+import android.widget.Toast
 import com.five.high.emirim.geulgil.geulgil.R
 import com.five.high.emirim.geulgil.geulgil.alias.SearchType
 import com.five.high.emirim.geulgil.geulgil.network.RetrofitService
@@ -54,15 +55,21 @@ class MainActivity : AppCompatActivity() {
                                 override fun onResponse(call: Call<JsonObject>?, response: Response<JsonObject>?) {
                                     if (response != null && response.isSuccessful) {
                                         Log.e(tag, "성공 : ${response.body()}")
-                                        val intent = Intent(this@MainActivity, ResultActivity::class.java)
-//                                        intent.putExtras("peopleId", response.body())
-                                        startActivity(intent)
+                                        if (response.body() != null && !response.body().toString().isEmpty()){
+                                            val intent = Intent(this@MainActivity, ResultActivity::class.java)
+                                            intent.putExtra("word_json", response.body().toString())
+                                            startActivity(intent)
+                                        }else{
+                                            Toast.makeText(applicationContext, "서버에 문제가 발생하였습니다.", Toast.LENGTH_LONG).show()
+                                        }
 
                                     } else {
                                         Log.e(tag, "실패")
                                     }
                                 }
                                 override fun onFailure(call: Call<JsonObject>?, t: Throwable?) {
+                                    Toast.makeText(applicationContext, "인터넷을 연결해주세요.", Toast.LENGTH_LONG).show()
+
                                 }
                             })
                         }

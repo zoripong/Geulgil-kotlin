@@ -10,7 +10,7 @@ import com.five.high.emirim.geulgil.geulgil.model.Word
 /**
  * Created by devuri on 2018-10-05.
  */
-class CardRecyclerAdapter(val items : ArrayList<Word>, val context: Context) : RecyclerView.Adapter<CardViewHolder>(){
+class CardRecyclerAdapter(private val items : ArrayList<Word>, private val context: Context) : RecyclerView.Adapter<CardViewHolder>(){
     override fun onBindViewHolder(holder: CardViewHolder?, position: Int) {
         holder?.tvWord?.text = items[position].word
     }
