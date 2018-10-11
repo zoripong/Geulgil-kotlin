@@ -44,7 +44,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/tv_word"
+                        android:id="@+id/tv_single_word"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -54,7 +54,7 @@
                         android:paddingBottom="5dp"
                         android:textSize="24sp"/>
                     <LinearLayout
-                        android:id="@+id/x_button"
+                        android:id="@+id/li_delete_single_word"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:gravity="right|top">
@@ -80,7 +80,7 @@
                         android:textSize="15sp"/>
                 </LinearLayout>
                 <LinearLayout
-                    android:id="@+id/mean_keywords_location"
+                    android:id="@+id/li_mean_keywords"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -90,7 +90,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/similar_keywords_location"
+                    android:id="@+id/li_similar_keywords"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
