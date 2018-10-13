@@ -7,11 +7,9 @@
 단어로 의미를 찾는 사전이 아닌 의미로 단어를 찾는 사전 글길.
 
 ## Functions
-![screenshot_01](https://lh3.googleusercontent.com/puH2yZeBoBKSjBLIrXNdn9ps8xC2g3Nc20bQOMDWzaXVJ_lLfeTErBfUh1eqD337h8I=w1920-h969-rw)
-![screenshot_02](https://lh3.googleusercontent.com/xpE2dndOX-FCn3Cis7xi9R8eLeXBBnAXpTKXc73GcOtxS42sCh1G8sxGLIZ7NJqdjiM=w1920-h969-rw)
-![screenshot_03](https://lh3.googleusercontent.com/lyEva2h8rQhHH7lrgOJzE_vALOuBpQT9vxQQpm5Hec_Yx9uxM8KIPGBmWi5clmqca4M=w1920-h969-rw)
-![screenshot_04](https://lh3.googleusercontent.com/gH3nxleq314_pmuUk56JzPYMQz-EhhX4QKa5OuxrQEw_W6_qN600eYfhO-2fzwi5i53G=w1920-h969-rw)
-![screenshot_05](https://lh3.googleusercontent.com/S93RfhuDh-wYAfEWL5bvcBInH3ocbYSMoG7txtN4rMXTcdiGl6FntAQhqWVJcFFg1w=w1920-h969-rw)
+
+<img src="https://lh3.googleusercontent.com/puH2yZeBoBKSjBLIrXNdn9ps8xC2g3Nc20bQOMDWzaXVJ_lLfeTErBfUh1eqD337h8I=w1920-h969-rw" alt="screenshot_01" width="20%"/><img src="https://lh3.googleusercontent.com/xpE2dndOX-FCn3Cis7xi9R8eLeXBBnAXpTKXc73GcOtxS42sCh1G8sxGLIZ7NJqdjiM=w1920-h969-rw" alt="screenshot_02" width="20%"/><img src="https://lh3.googleusercontent.com/lyEva2h8rQhHH7lrgOJzE_vALOuBpQT9vxQQpm5Hec_Yx9uxM8KIPGBmWi5clmqca4M=w1920-h969-rw" alt="screenshot_03" width="20%"/><img src="https://lh3.googleusercontent.com/gH3nxleq314_pmuUk56JzPYMQz-EhhX4QKa5OuxrQEw_W6_qN600eYfhO-2fzwi5i53G=w1920-h969-rw" alt="screenshot_04" width="20%"/><img src="https://lh3.googleusercontent.com/S93RfhuDh-wYAfEWL5bvcBInH3ocbYSMoG7txtN4rMXTcdiGl6FntAQhqWVJcFFg1w=w1920-h969-rw" alt="screenshot_05" width="20%"/>
+
 
 
 ## Download
@@ -22,7 +20,15 @@
 
 ## Screenshot
 
+<img src="" alt="메인화면" width="20%"/><img src="" alt="포함어 검색" width="20%"/><img src="" alt="유사어 검색" width="20%"/><img src="" alt="단어의미" width="20%"/><img src="" alt="검색화면" width="20%"/>
 
-## [Website](https://geulgil-web.firebaseapp.com/)
+## [Website]
+[![Web-Site-ScreenShot](https://bit.ly/2OPLfl1)](https://geulgil-web.firebaseapp.com/)
 
-author Devuri([zoripong](https://github.com/zoripong/))
+## Extras
+- **현재 키스토어 분실 문제로 인하여 업데이트를 하지못하고 있어 현재 플레이스토어의 서비스로는 서버와의 연결이 불가능한 상태입니다.**
+- 리팩토링 이전의 레포지토리입니다.
+  * [글길 안드로이드 자바 버전](https://github.com/zoripong/Geulgil)
+  * [글길 서버 리팩토링 이전 버전](https://github.com/zoripong/Geulgil-api)
+- author [zoripong](https://github.com/zoripong/)
+- CONTACT ME : <mailto:devuri404@gmail.com>
