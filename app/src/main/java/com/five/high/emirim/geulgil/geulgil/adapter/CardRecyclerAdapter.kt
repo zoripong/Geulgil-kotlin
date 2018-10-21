@@ -24,10 +24,23 @@ class CardRecyclerAdapter(private val items : ArrayList<Word>, private val conte
                 holder.tvWord?.text = items[position].word
                 holder.tvMean?.text = items[position].means[0]
 
-                for(item in items[position].meanKeywords){
-                    holder.liMeanKeywords.addView(Button(context))
+                var index = 0
+/*
+                for(meanKeywordList in items[position].meanKeywords){
+                    if(index > 7){
+                        break;
+                    }
+                    for(item in meanKeywordList){
+                        if(index > 7){
+                            break;
+                        }
+                        val button = Button(context)
+                        button.text = item
+                        holder.liMeanKeywords.addView(Button(context))
+                        index++;
+                    }
                 }
-
+*/
                 for(item in items[position].similarKeywords) {
                     holder.liSimilarKeywords.addView(Button(context))
                 }

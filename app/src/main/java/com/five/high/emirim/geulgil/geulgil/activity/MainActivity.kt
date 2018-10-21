@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
 
         iv_question_mark.imageAlpha = 50
         iv_question_mark.setOnClickListener {
-            startActivity(Intent(this@MainActivity, IntroActivity::class.java))
+            startActivity(Intent(this@MainActivity, TutorialActivity::class.java))
         }
 
     }
