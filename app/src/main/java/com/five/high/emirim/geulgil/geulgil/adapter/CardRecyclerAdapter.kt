@@ -35,7 +35,7 @@ class CardRecyclerAdapter(private val items : ArrayList<Word>, private val conte
                             break;
                         }
                         val button = Button(context)
-                        button.text = item
+                        button.index = item
                         holder.liMeanKeywords.addView(Button(context))
                         index++;
                     }

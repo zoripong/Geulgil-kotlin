@@ -27,12 +27,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportActionBar!!.hide()
+        supportActionBar!!.hide() // Remove Actionbar
 
         window.setBackgroundDrawableResource(R.drawable.bg_basic)
         et_searchBox.text = Editable.Factory.getInstance().newEditable("사랑  ?")
         iv_searchBtn.setOnClickListener {
-//            var word = et_searchBox.getText().toString()
+//            var word = et_searchBox.getIndex().toString()
             var word : String= et_searchBox.text.toString()
 
             when {

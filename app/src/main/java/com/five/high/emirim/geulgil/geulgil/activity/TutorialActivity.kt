@@ -16,16 +16,18 @@ class TutorialActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tutorial)
 
+        supportActionBar!!.hide() // Remove Actionbar
+
         setupViewPager(pager)
 
     }
     private fun setupViewPager(pager: ViewPager?){
         val adapter = Adapter(supportFragmentManager)
 
-        adapter.addFragment(BlankFragment.newInstance("tutorial_01.jpg"))
-        adapter.addFragment(BlankFragment.newInstance("tutorial_02.jpg"))
-        adapter.addFragment(BlankFragment.newInstance("tutorial_03.jpg"))
-        adapter.addFragment(BlankFragment.newInstance("tutorial_04.jpg"))
+        adapter.addFragment(BlankFragment.newInstance(0))
+        adapter.addFragment(BlankFragment.newInstance(1))
+        adapter.addFragment(BlankFragment.newInstance(2))
+        adapter.addFragment(BlankFragment.newInstance(3))
 
         pager?.adapter = adapter
     }

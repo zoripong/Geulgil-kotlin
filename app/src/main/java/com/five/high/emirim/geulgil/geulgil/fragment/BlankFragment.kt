@@ -5,18 +5,19 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import com.five.high.emirim.geulgil.geulgil.R
 import kotlinx.android.synthetic.main.fragment_blank.view.*
 
 
 class BlankFragment : Fragment() {
-    var text = ""
+    var image = R.drawable.tutorial_01
 
     companion object {
-        fun newInstance(text: String): BlankFragment {
+        fun newInstance(index: Int): BlankFragment {
             val fragment = BlankFragment()
             val bundle = Bundle()
-            bundle.putString("Text", text)
+            bundle.putInt("index", index)
             fragment.arguments = bundle
             return fragment
         }
@@ -24,7 +25,7 @@ class BlankFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        text = arguments?.get("Text").toString()
+        image += Integer.parseInt(arguments?.get("index").toString())
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +35,8 @@ class BlankFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.textView.setText(text)
+        Glide.with(this)
+                .load(image)
+                .into(view.iv_tutorial)
     }
 }
