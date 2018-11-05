@@ -7,11 +7,11 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.view.ViewPager
 import com.five.high.emirim.geulgil.geulgil.R
-import com.five.high.emirim.geulgil.geulgil.fragment.BlankFragment
+import com.five.high.emirim.geulgil.geulgil.fragment.TutorialFragment
 import kotlinx.android.synthetic.main.activity_tutorial.*
 
 class TutorialActivity : AppCompatActivity() {
-
+    val TUTORIAL_PAGE: Int = 4
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tutorial)
@@ -24,11 +24,9 @@ class TutorialActivity : AppCompatActivity() {
     private fun setupViewPager(pager: ViewPager?){
         val adapter = Adapter(supportFragmentManager)
 
-        adapter.addFragment(BlankFragment.newInstance(0))
-        adapter.addFragment(BlankFragment.newInstance(1))
-        adapter.addFragment(BlankFragment.newInstance(2))
-        adapter.addFragment(BlankFragment.newInstance(3))
-
+        for( i in 0 until TUTORIAL_PAGE){
+            adapter.addFragment(TutorialFragment.newInstance(i))
+        }
         pager?.adapter = adapter
     }
 

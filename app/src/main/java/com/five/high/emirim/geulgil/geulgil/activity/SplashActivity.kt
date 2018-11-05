@@ -26,13 +26,14 @@ class SplashActivity : AppCompatActivity() {
         Log.e(TAG, "isFirstUser is$isFirstUser")
         Handler().postDelayed({
             var intent = Intent(this@SplashActivity, MainActivity::class.java)
+            startActivity(intent)
             if(isFirstUser){
                 var editor = sharedPreference.edit()
                 editor.putBoolean("isFirstUser", false)
                 editor.apply()
                 intent = Intent(this@SplashActivity, TutorialActivity::class.java)
+                startActivity(intent)
             }
-            startActivity(intent)
             finish()
         }, 3000)
     }
