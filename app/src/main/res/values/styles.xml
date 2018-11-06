@@ -8,4 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="DialogMinWidth" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+    </style>
 </resources>

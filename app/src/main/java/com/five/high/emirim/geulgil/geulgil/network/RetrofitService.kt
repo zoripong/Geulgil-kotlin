@@ -38,7 +38,8 @@ interface RetrofitService {
             val retrofit = Retrofit.Builder()
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
-                    .baseUrl("http://10.96.124.219:8088/")
+//                    .baseUrl("http://10.96.124.219:8088/")
+                    .baseUrl("http://172.30.1.19:8088/")
                     .build()
 
             return retrofit.create(RetrofitService::class.java);
