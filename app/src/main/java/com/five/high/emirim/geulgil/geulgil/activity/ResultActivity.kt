@@ -17,7 +17,8 @@ class ResultActivity : AppCompatActivity() {
 
         supportActionBar!!.hide()
 
-        JsonParser.createInstance.parsingJsonObject(words, intent.getStringExtra("word_json"))
+        val jp = JsonParser()
+        jp.parsingJsonObject(words, intent.getStringExtra("word_json"))
 
         // Creates a vertical Layout Manager
         rv_card_list.layoutManager = LinearLayoutManager(this)

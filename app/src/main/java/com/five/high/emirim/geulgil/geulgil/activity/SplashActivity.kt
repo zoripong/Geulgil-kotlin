@@ -16,6 +16,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
+
 /**
  * Created by Devuri on 2018-10-05.
  */
@@ -29,9 +31,10 @@ class SplashActivity : AppCompatActivity() {
 
         supportActionBar!!.hide() // 액션바 숨기기
 
-        // val for tutorial
-        val sharedPreference =  getSharedPreferences(PREF_NAME,Context.MODE_PRIVATE)
-        val isFirstUser:Boolean = sharedPreference.getBoolean("isFirstUser", true)
+        checkNetworkStatus() // 네트워크 상태 확인
+    }
+
+    fun checkNetworkStatus(){
 
         val retrofitService = RetrofitService.create()
         retrofitService.networkTest().enqueue(object : Callback<JsonObject> {
@@ -39,18 +42,7 @@ class SplashActivity : AppCompatActivity() {
                 if (response != null && response.isSuccessful) {
                     val body : JsonObject = response.body()!!
                     if(body.get("status").asString == "ok"){
-                        Handler().postDelayed({
-                            var intent = Intent(this@SplashActivity, MainActivity::class.java)
-                            startActivity(intent)
-                            if(isFirstUser){
-                                var editor = sharedPreference.edit()
-                                editor.putBoolean("isFirstUser", false)
-                                editor.apply()
-                                intent = Intent(this@SplashActivity, TutorialActivity::class.java)
-                                startActivity(intent)
-                            }
-                            finish()
-                        }, 3000)
+                        changeActivity()
                     }else{
                         failConnectingNetwork()
                     }
@@ -63,9 +55,28 @@ class SplashActivity : AppCompatActivity() {
             }
         })
     }
+    private fun changeActivity(){
+        // val for tutorial
+        val sharedPreference =  getSharedPreferences(PREF_NAME,Context.MODE_PRIVATE)
+        val isFirstUser:Boolean = sharedPreference.getBoolean("isFirstUser", true)
+
+        Handler().postDelayed({
+            var intent = Intent(this@SplashActivity, MainActivity::class.java)
+            startActivity(intent)
+            if(isFirstUser){
+                var editor = sharedPreference.edit()
+                editor.putBoolean("isFirstUser", false)
+                editor.apply()
+                intent = Intent(this@SplashActivity, TutorialActivity::class.java)
+                startActivity(intent)
+            }
+            finish()
+        }, 3000)
+    }
     fun failConnectingNetwork(){
-        Thread(Runnable {
-            NetworkExceptionDialog.createInstance.showDialog(this, "야호")
-        }).start()
+        this.runOnUiThread(Runnable {
+            val dlg = NetworkExceptionDialog()
+            dlg.showDialog(this, "야호")
+        })
     }
 }

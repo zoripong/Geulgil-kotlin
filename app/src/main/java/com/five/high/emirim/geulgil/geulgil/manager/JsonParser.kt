@@ -9,6 +9,7 @@ import org.json.JSONObject
  * Created by Devuri on 2018-10-05.
  */
 class JsonParser {
+    /*
     private constructor(){}
     companion object {
         private lateinit var instance: JsonParser
@@ -20,7 +21,9 @@ class JsonParser {
 
                 return instance
             }
+        //https://antonioleiva.com/objects-kotlin/
     }
+    */
     // TODO: Test
     fun parsingJsonObject(list: ArrayList<Word>, stringJson: String): ArrayList<Word>{
         val json = JSONObject(stringJson)
